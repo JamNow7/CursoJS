@@ -1,0 +1,124 @@
+/* ===================================================
+   MENÚ CON CSS GRID - La Bella Italia
+   16 platos organizados en grilla de 4x4
+   =================================================== */
+
+/* Título del menú */
+.menu-titulo {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: linear-gradient(to right, #fff 0%, #ffe4b5 100%);
+    border-radius: 10px;
+    border-left: 6px solid red;
+}
+
+/* Grid: Contenedor principal con 16 platos */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas iguales */
+    gap: 20px; /* Espacio entre platos */
+    margin-bottom: 30px;
+}
+
+/* Cada tarjeta de plato */
+.plato {
+    background: white;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plato:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    border-color: red;
+}
+
+/* Imagen de cada plato */
+.plato img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 2px solid #ddd;
+}
+
+/* Título de cada plato */
+.plato h3 {
+    color: #8b0000;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Descripción del plato */
+.plato .descripcion {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    min-height: 60px;
+}
+
+/* Precio del plato */
+.plato .precio {
+    color: red;
+    font-weight: bold;
+    font-size: 1.3rem;
+    margin-top: 10px;
+}
+
+/* Información adicional del menú */
+.menu-info {
+    background: linear-gradient(to right, #fff 0%, #ffe4b5 100%);
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 6px solid red;
+}
+
+.menu-info h2 {
+    margin-bottom: 15px;
+}
+
+.menu-info p {
+    margin: 8px 0;
+    font-size: 1.05rem;
+}
+
+/* Responsive: Para tablets */
+@media (max-width: 1024px) {
+    .menu-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas en tablets */
+    }
+}
+
+/* Responsive: Para móviles */
+@media (max-width: 768px) {
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en móviles */
+        gap: 15px;
+    }
+
+    .plato h3 {
+        font-size: 1rem;
+        min-height: 60px;
+    }
+
+    .plato .descripcion {
+        font-size: 0.85rem;
+    }
+}
+
+/* Responsive: Para móviles muy pequeños */
+@media (max-width: 480px) {
+    .menu-grid {
+        grid-template-columns: 1fr; /* 1 columna en móviles pequeños */
+    }
+}
